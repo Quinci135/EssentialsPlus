@@ -31,7 +31,7 @@ namespace EssentialsPlus
 
 		public override string Description
 		{
-			get { return "Essentials, but better"; }
+			get { return "Essentials, permissions granted by trading system have an `s` added. E.g. essentials.s.tp.up."; }
 		}
 
 		public override string Name
@@ -219,7 +219,7 @@ namespace EssentialsPlus
 				AllowServer = false,
 				HelpText = "Sets you a home point."
 			});
-			Add(new Command(Permissions.HomeTp, Commands.MyHome, "myhome")
+			Add(new Command(Permissions.HomeTp, Commands.MyHome, "myhome", "mh")
 			{
 				AllowServer = false,
 				HelpText = "Teleports you to one of your home points."
@@ -264,7 +264,7 @@ namespace EssentialsPlus
 				HelpText = "Broadcasts a message in a custom color."
 			});
 
-			Add(new Command(Permissions.Sudo, Commands.Sudo, "sudo")
+			Add(new Command(Permissions.Sudo, Commands.Sudo, "esudo")
 			{
 				HelpText = "Allows you to execute a command as another user."
 			});
