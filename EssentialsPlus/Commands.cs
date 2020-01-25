@@ -418,7 +418,7 @@ namespace EssentialsPlus
 						if (amtToAdd > 0 && item.stack > 0 && !item.Name.ToLower().Contains("coin"))
 						{
 							full = false;
-							e.Player.GiveItem(item.type, amtToAdd, 0);
+							e.Player.GiveItem(item.type, "", e.TPlayer.width, e.TPlayer.height, amtToAdd, 0);
 						}
 					}
 					if (!full)
@@ -433,8 +433,8 @@ namespace EssentialsPlus
 					if (amtToAdd == 0)
 						e.Player.SendErrorMessage("Your {0} is already full.", item.Name);
 					else if (amtToAdd > 0 && item.stack > 0)
-						e.Player.GiveItem(item.type, amtToAdd, 0);
-						e.Player.SendSuccessMessage("Filled up your {0}.", item.Name);
+                        e.Player.GiveItem(item.type, "", e.TPlayer.width, e.TPlayer.height, amtToAdd, 0);
+                    e.Player.SendSuccessMessage("Filled up your {0}.", item.Name);
 				}
 			});
 		}
@@ -468,10 +468,10 @@ namespace EssentialsPlus
 						string playerName = String.IsNullOrWhiteSpace(match.Groups[2].Value)
 							? match.Groups[1].Value
 							: match.Groups[2].Value;
-						List<TSPlayer> players = TSPlayer.FindByNameOrID(playerName);
+						List<TSPlayer> players = TShock.Utils.FindPlayer(playerName);
 						if (players.Count == 0)
 						{
-							TShockAPI.DB.UserAccount user = TShock.UserAccounts.GetUserAccountByName(playerName);
+							TShockAPI.DB.User user = TShock.Users.GetUserByName(playerName);
 							if (user == null)
 								e.Player.SendErrorMessage("Invalid player or account '{0}'!", playerName);
 							else
@@ -545,10 +545,10 @@ namespace EssentialsPlus
 						string playerName = String.IsNullOrWhiteSpace(match.Groups[2].Value)
 							? match.Groups[1].Value
 							: match.Groups[2].Value;
-						List<TSPlayer> players = TSPlayer.FindByNameOrID(playerName);
+						List<TSPlayer> players = TShock.Utils.FindPlayer(playerName);
 						if (players.Count == 0)
 						{
-							TShockAPI.DB.UserAccount user = TShock.UserAccounts.GetUserAccountByName(playerName);
+							TShockAPI.DB.User user = TShock.Users.GetUserByName(playerName);
 							if (user == null)
 								e.Player.SendErrorMessage("Invalid player or account '{0}'!", playerName);
 							else
@@ -602,7 +602,7 @@ namespace EssentialsPlus
 			{
 				if (e.Player.TempPoints.Any(p => p == Point.Zero))
 				{
-					e.Player.SendErrorMessage("Ruler points are not set up!");
+					e.Player.SendErrorMessage($"Ruler points are not set up!\nUse {TShock.Config.CommandSpecifier}ruler [1/2] to setup points.");
 					return;
 				}
 
@@ -690,7 +690,7 @@ namespace EssentialsPlus
 			string playerName = String.IsNullOrWhiteSpace(match.Groups[3].Value) ? match.Groups[2].Value : match.Groups[3].Value;
 			string command = match.Groups[4].Value;
 
-			List<TSPlayer> players = TSPlayer.FindByNameOrID(playerName);
+			List<TSPlayer> players = TShock.Utils.FindPlayer(playerName);
 			if (players.Count == 0)
 				e.Player.SendErrorMessage("Invalid player '{0}'!", playerName);
 			else if (players.Count > 1)

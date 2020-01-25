@@ -49,6 +49,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
     <Reference Include="Mono.Data.Sqlite">
       <HintPath>References\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
@@ -61,18 +68,11 @@
     <Reference Include="OTAPI">
       <HintPath>References\OTAPI.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
     <Reference Include="TerrariaServer">
       <HintPath>References\TerrariaServer.exe</HintPath>
     </Reference>
     <Reference Include="TShockAPI">
-      <HintPath>..\..\..\..\bin\TShock-general-devel\TShockAPI\bin\Release\ServerPlugins\TShockAPI.dll</HintPath>
+      <HintPath>References\TShockAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

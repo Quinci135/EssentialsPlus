@@ -59,7 +59,7 @@ namespace EssentialsPlus.Db
 				}
 			});
 		}
-		public async Task<bool> AddAsync(TShockAPI.DB.UserAccount user, DateTime expiration)
+		public async Task<bool> AddAsync(TShockAPI.DB.User user, DateTime expiration)
 		{
 			return await Task.Run(() =>
 			{
@@ -110,7 +110,7 @@ namespace EssentialsPlus.Db
 				}
 			});
 		}
-		public async Task<bool> DeleteAsync(TShockAPI.DB.UserAccount user)
+		public async Task<bool> DeleteAsync(TShockAPI.DB.User user)
 		{
 			return await Task.Run(() =>
 			{

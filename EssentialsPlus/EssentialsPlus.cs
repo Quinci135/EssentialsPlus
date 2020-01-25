@@ -31,7 +31,7 @@ namespace EssentialsPlus
 
 		public override string Description
 		{
-			get { return "Essentials, permissions granted by trading system have an `s` added. E.g. essentials.s.tp.up."; }
+			get { return "Essentials+ Updated to tsapi 2.1 tshock mintaka 4.3.26"; }
 		}
 
 		public override string Name
@@ -219,10 +219,10 @@ namespace EssentialsPlus
 				AllowServer = false,
 				HelpText = "Sets you a home point."
 			});
-			Add(new Command(Permissions.HomeTp, Commands.MyHome, "myhome", "mh")
+			Add(new Command(Permissions.HomeTp, Commands.MyHome, "myhome")
 			{
 				AllowServer = false,
-				HelpText = "Teleports you to one of your home points."
+				HelpText = $"Teleports you to one of your home points. {TShock.Config.CommandSpecifier}myhome -l or -list for a list of all your homes."
 			});
 
 			Add(new Command(Permissions.KickAll, Commands.KickAll, "kickall")
@@ -264,7 +264,7 @@ namespace EssentialsPlus
 				HelpText = "Broadcasts a message in a custom color."
 			});
 
-			Add(new Command(Permissions.Sudo, Commands.Sudo, "esudo")
+			Add(new Command(Permissions.Sudo, Commands.Sudo, "sudo")
 			{
 				HelpText = "Allows you to execute a command as another user."
 			});
@@ -353,9 +353,9 @@ namespace EssentialsPlus
 
 			switch (e.MsgID)
 			{
-				#region Packet 45 - PlayerKillMe
+                //depracated https://github.com/Pryaxis/TerrariaAPI-Server/pull/151/commits/c302e57f4fd934420a4c3311220993d2c567f15b #region Packet 45 - PlayerKillMe 
 
-				case PacketTypes.PlayerKillMe:
+                case PacketTypes.PlayerDeathV2:
 					if (tsplayer.Group.HasPermission(Permissions.TpBack))
 					{
 						tsplayer.GetPlayerInfo().PushBackHistory(tsplayer.TPlayer.position);
@@ -389,7 +389,7 @@ namespace EssentialsPlus
 					}
 					return;
 
-					#endregion
+					//#endregion
 			}
 		}
 	}
