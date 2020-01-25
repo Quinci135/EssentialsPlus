@@ -1,5 +1,6 @@
 Updated to TSAPI 2.1 & Tshock Mintaka 4.3.26 by Quinci       
 As far as I know, should be fully functional.
+Pvp command removed in this fork.
 
 # EssentialsPlus #
 
