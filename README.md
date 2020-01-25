@@ -1,4 +1,4 @@
-Might've used zombie (general devel) not mintaka..    
+Updated to TSAPI 2.1 a& Tshock Mintaka 4.3.26
 
 # EssentialsPlus #
 
@@ -17,7 +17,7 @@ It does not include Sign Commands.
     /freezetime -> Freezes and unfreezes time.
     /delhome <home name> -> Deletes a home specified by <home name>.
     /sethome <home name> -> Sets a home named <home name>.
-    /myhome <home name> -> Teleports you to your house named <home name>.
+    /myhome <home name> -> Teleports you to your house named <home name>. /myhome -l or -list for a list of all homes.
     /kickall <flag> <reason> -> Kicks every player for <reason>. Valid flag: -nosave -> kick doesn't save SSC inventory.
     /= -> Repeats your last entered command (not including other iterations of /=).
 	/more -> Maximizes item stack of held item. Subcommands:
