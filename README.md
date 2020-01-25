@@ -1,4 +1,6 @@
-Might've used zombie (general devel) not mintaka..    
+Updated to TSAPI 2.1 & Tshock Mintaka 4.3.26 by Quinci .   
+As far as I know, should be fully functional.    
+Some changes for ssc
 
 # EssentialsPlus #
 
@@ -26,7 +28,7 @@ It does not include Sign Commands.
         add <name> <time> -> Adds a mute on user with name <name> for <time>
         delete <name> -> Removes a mute on user with name <name>
         help -> Outputs command info
-    /pvp -> Enables/disables PvP status
+    /pvp -> Enables/disables PvP status (Command is commented out for dimensions)         
     /ruler [1|2] -> Measures distance between points 1 and 2.
     /sudo [flag] <player> <command> -> Attempts to make <player> execute <command>. Valid flag: -force -> forces the command to be run, independent of <player>'s permissions. Players with the essentials.sudo.super permission can use /sudo on anyone.
     /timecmd [flag] <time> <command> -> Makes <command> execute after <time>. Valid flag: -repeat -> Makes <command> repeat every <time>
@@ -38,15 +40,15 @@ It does not include Sign Commands.
 
 ## Permissions ##
 
-	essentials.find -> Grants access to the /find command.
+	essentials.s.find -> Grants access to the /find command.
 	essentials.freezetime -> Grants access to the /freezetime command.
-	essentials.home.delete -> Grants access to the /delhome and /sethome commands.
-	essentials.home.tp -> Grants access to the /myhome command.
+	essentials.s.home.delete -> Grants access to the /delhome and /sethome commands.
+	essentials.s.home.tp -> Grants access to the /myhome command.
 	essentials.kickall -> Grants access to the /kickall command.
-	essentials.lastcommand -> Grants access to the /= command.
-	essentials.more -> Grants access to the /more command.
+	essentials.s.lastcommand -> Grants access to the /= command.
+	essentials.s.more -> Grants access to the /more command.
 	essentials.mute -> Grants access to the improved /mute command.
-	essentials.pvp -> Grants access to the /pvp command.
+	essentials.s.pvp -> Grants access to the /pvp command. (Command is commented out for dimensions)         
 	essentials.ruler -> Grants access to the /ruler command.
 	essentials.send -> Grants access to the /send command.
 	essentials.sudo -> Grants access to the /sudo command.
@@ -54,8 +56,8 @@ It does not include Sign Commands.
 	essentials.sudo.super -> Allows sudo to be used on anyone.
 	essentials.sudo.invisible -> Causes sudo'd commands to be executed invisibly.
 	essentials.timecmd -> Grants access to the /timecmd command.
-	essentials.tp.back -> Grants access to the /back command.
-	essentials.tp.down -> Grants access to the /down command.
-	essentials.tp.left -> Grants access to the /left command.
-	essentials.tp.right -> Grants access to the /right command.
-	essentials.tp.up -> Grants access to the /up command.
+	essentials.s.tp.back -> Grants access to the /back command.
+	essentials.s.tp.down -> Grants access to the /down command.
+	essentials.s.tp.left -> Grants access to the /left command.
+	essentials.s.tp.right -> Grants access to the /right command.
+	essentials.s.tp.up -> Grants access to the /up command.
