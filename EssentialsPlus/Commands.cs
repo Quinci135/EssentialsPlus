@@ -654,15 +654,15 @@ namespace EssentialsPlus
 			TSPlayer.All.SendMessage(match.Groups[4].Value, new Color(r, g, b));
 		}
 
-		public static async void Sudo(CommandArgs e)
+		public static async void Runas(CommandArgs e)
 		{
 			var regex = new Regex(String.Format(@"^\w+(?: -(\w+))* (?:""(.+?)""|([^\s]*?)) (?:{0})?(.+)$", TShock.Config.CommandSpecifier));
 			Match match = regex.Match(e.Message);
 			if (!match.Success)
 			{
-				e.Player.SendErrorMessage("Invalid syntax! Proper syntax: {0}sudo [-switches...] <player> <command...>", TShock.Config.CommandSpecifier);
-				e.Player.SendSuccessMessage("Valid {0}sudo switches:", TShock.Config.CommandSpecifier);
-				e.Player.SendInfoMessage("-f, -force: Force sudo, ignoring permissions.");
+				e.Player.SendErrorMessage("Invalid syntax! Proper syntax: {0}runas [-switches...] <player> <command...>", TShock.Config.CommandSpecifier);
+				e.Player.SendSuccessMessage("Valid {0}runas switches:", TShock.Config.CommandSpecifier);
+				e.Player.SendInfoMessage("-f, -force: Force runas, ignoring permissions.");
 				return;
 			}
 
@@ -673,7 +673,7 @@ namespace EssentialsPlus
 				{
 					case "f":
 					case "force":
-						if (!e.Player.Group.HasPermission(Permissions.SudoForce))
+						if (!e.Player.Group.HasPermission(Permissions.RunasForce))
 						{
 							e.Player.SendErrorMessage("You do not have access to the switch '-{0}'!", capture.Value);
 							return;
@@ -681,8 +681,8 @@ namespace EssentialsPlus
 						force = true;
 						continue;
 					default:
-						e.Player.SendSuccessMessage("Valid {0}sudo switches:", TShock.Config.CommandSpecifier);
-						e.Player.SendInfoMessage("-f, -force: Force sudo, ignoring permissions.");
+						e.Player.SendSuccessMessage("Valid {0}runas switches:", TShock.Config.CommandSpecifier);
+						e.Player.SendInfoMessage("-f, -force: Force runas, ignoring permissions.");
 						return;
 				}
 			}
@@ -697,15 +697,15 @@ namespace EssentialsPlus
 				e.Player.SendErrorMessage("More than one player matched: {0}", String.Join(", ", players.Select(p => p.Name)));
 			else
 			{
-				if ((e.Player.Group.GetDynamicPermission(Permissions.Sudo) <= players[0].Group.GetDynamicPermission(Permissions.Sudo))
-					&& !e.Player.Group.HasPermission(Permissions.SudoSuper))
+				if ((e.Player.Group.GetDynamicPermission(Permissions.Runas) <= players[0].Group.GetDynamicPermission(Permissions.Runas))
+					&& !e.Player.Group.HasPermission(Permissions.RunasSuper))
 				{
 					e.Player.SendErrorMessage("You cannot force {0} to execute {1}{2}!", players[0].Name, TShock.Config.CommandSpecifier, command);
 					return;
 				}
 
 				e.Player.SendSuccessMessage("Forced {0} to execute {1}{2}.", players[0].Name, TShock.Config.CommandSpecifier, command);
-				if (!e.Player.Group.HasPermission(Permissions.SudoInvisible))
+				if (!e.Player.Group.HasPermission(Permissions.RunasInvisible))
 					players[0].SendInfoMessage("{0} forced you to execute {1}{2}.", e.Player.Name, TShock.Config.CommandSpecifier, command);
 
 				var fakePlayer = new TSPlayer(players[0].Index)
