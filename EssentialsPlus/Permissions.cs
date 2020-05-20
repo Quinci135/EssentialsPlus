@@ -14,10 +14,10 @@
 		public static readonly string PvP = "essentials.s.pvp";
 		public static readonly string Ruler = "essentials.ruler";
         public static readonly string Send = "essentials.send";
-		public static readonly string Sudo = "essentials.sudo";
-		public static readonly string SudoForce = "essentials.sudo.force";
-		public static readonly string SudoSuper = "essentials.sudo.super";
-		public static readonly string SudoInvisible = "essentials.sudo.invisible";
+		public static readonly string Runas = "essentials.runas";
+		public static readonly string RunasForce = "essentials.runas.force";
+		public static readonly string RunasSuper = "essentials.runas.super";
+		public static readonly string RunasInvisible = "essentials.runas.invisible";
 		public static readonly string TimeCmd = "essentials.timecmd";
 		public static readonly string TpBack = "essentials.s.tp.back";
 		public static readonly string TpDown = "essentials.s.tp.down";

@@ -246,13 +246,13 @@ namespace EssentialsPlus
 			{
 				HelpText = "Manages mutes."
 			});
-
+            /*
 			Add(new Command(Permissions.PvP, Commands.PvP, "pvp")
 			{
 				AllowServer = false,
 				HelpText = "Toggles your PvP status."
 			});
-
+            */
 			Add(new Command(Permissions.Ruler, Commands.Ruler, "ruler")
 			{
 				AllowServer = false,
@@ -264,7 +264,7 @@ namespace EssentialsPlus
 				HelpText = "Broadcasts a message in a custom color."
 			});
 
-			Add(new Command(Permissions.Sudo, Commands.Sudo, "sudo")
+			Add(new Command(Permissions.Runas, Commands.Runas, "runas")
 			{
 				HelpText = "Allows you to execute a command as another user."
 			});
