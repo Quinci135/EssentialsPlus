@@ -29,7 +29,7 @@ It does not include Sign Commands.
         help -> Outputs command info
     /pvp -> Enables/disables PvP status
     /ruler [1|2] -> Measures distance between points 1 and 2.
-    /sudo [flag] <player> <command> -> Attempts to make <player> execute <command>. Valid flag: -force -> forces the command to be run, independent of <player>'s permissions. Players with the essentials.sudo.super permission can use /sudo on anyone.
+    /runas [flag] <player> <command> -> Attempts to make <player> execute <command>. Valid flag: -force -> forces the command to be run, independent of <player>'s permissions. Players with the essentials.runas.super permission can use /runas on anyone.
     /timecmd [flag] <time> <command> -> Makes <command> execute after <time>. Valid flag: -repeat -> Makes <command> repeat every <time>
     /back [steps] -> Takes you back to your previous position. If [steps] is supplied, attempts to take you back to your positions [steps] steps ago.
     /down [levels] -> Attempts to move you down the map. If [levels] is specified, attempts to move you down [levels] times.
