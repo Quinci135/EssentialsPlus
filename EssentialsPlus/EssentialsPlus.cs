@@ -60,6 +60,8 @@ namespace EssentialsPlus
 				ServerApi.Hooks.GamePostInitialize.Deregister(this, OnPostInitialize);
 				ServerApi.Hooks.NetGetData.Deregister(this, OnGetData);
 				ServerApi.Hooks.ServerJoin.Deregister(this, OnJoin);
+				ServerApi.Hooks.ServerLeave.Deregister(this, OnLeave);
+
 			}
 			base.Dispose(disposing);
 		}
@@ -73,6 +75,7 @@ namespace EssentialsPlus
 			ServerApi.Hooks.GamePostInitialize.Register(this, OnPostInitialize);
 			ServerApi.Hooks.NetGetData.Register(this, OnGetData);
 			ServerApi.Hooks.ServerJoin.Register(this, OnJoin);
+			ServerApi.Hooks.ServerLeave.Register(this, OnLeave);
 		}
 
 		private async void OnReload(ReloadEventArgs e)
@@ -391,6 +394,11 @@ namespace EssentialsPlus
 
 					//#endregion
 			}
+		}
+
+		private void OnLeave(LeaveEventArgs e)
+		{
+			TShock.Players[e.Who].GetPlayerInfo().Dispose();
 		}
 	}
 }
