@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using Microsoft.Xna.Framework;
 
 namespace EssentialsPlus
 {
-	public class PlayerInfo
+	public class PlayerInfo : IDisposable
 	{
 		private List<Vector2> backHistory = new List<Vector2>();
 		private CancellationTokenSource mute = new CancellationTokenSource();
@@ -25,6 +26,14 @@ namespace EssentialsPlus
 			get { return timeCmd.Token; }
 		}
 		public string LastCommand { get; set; }
+
+		public void Dispose()
+		{
+			mute.Cancel();
+			mute.Dispose();
+			timeCmd.Cancel();
+			timeCmd.Dispose();
+		}
 
 		~PlayerInfo()
 		{
