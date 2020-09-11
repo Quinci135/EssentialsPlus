@@ -397,7 +397,7 @@ namespace EssentialsPlus
 
 		private void OnLeave(LeaveEventArgs e)
 		{
-			TShock.Players[e.Who].GetPlayerInfo().Dispose();
+			TShock.Players[e.Who].GetPlayerInfo().Clear();
 		}
 	}
 }
